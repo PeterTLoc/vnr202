@@ -15,37 +15,39 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -50, opacity: 0 }}
+      initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="h-16 fixed top-0 left-0 w-full z-50 
-                 bg-gradient-to-b from-black/90 to-zinc-900/60 
-                 backdrop-blur-sm border-b border-yellow-700/40 
-                 shadow-[0_2px_20px_rgba(255,215,0,0.15)]"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="fixed top-0 left-0 w-full z-50 bg-[#fdf8ee]/95 border-b border-yellow-800/50 shadow-[0_2px_8px_rgba(120,80,20,0.15)] backdrop-blur-sm"
     >
+      {/* Top decorative line */}
+      <div className="w-full h-[3px] bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
+
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-        {/* Title */}
+        {/* Brand Title */}
         <motion.h2
-          whileHover={{ scale: 1.05, textShadow: "0px 0px 10px #e2b714" }}
-          className="text-2xl font-serif text-yellow-400 tracking-wide"
+          whileHover={{ scale: 1.03 }}
+          className="text-xl md:text-2xl font-serif text-red-700 tracking-wide"
         >
-          Nhóm 8 — <span className="text-gray-200">Đổi Mới & Hội Nhập</span>
+          <span className="font-bold text-red-800">Nhóm 8</span>{" "}
+          <span className="text-yellow-800 italic">&mdash; Đổi Mới & Hội Nhập</span>
         </motion.h2>
 
-        {/* Links */}
-        <ul className="flex gap-6 text-gray-300 font-medium">
+        {/* Navigation Links */}
+        <ul className="flex gap-6 text-sm md:text-base font-medium text-[#3b2d1f]">
           {links.map(({ path, label }) => (
             <li key={path}>
               <Link
                 to={path}
-                className={`relative hover:text-yellow-400 transition-all duration-300
-                  ${location.pathname === path ? "text-yellow-400" : ""}`}
+                className={`relative px-1 pb-1 transition-all duration-300 hover:text-red-700 ${
+                  location.pathname === path ? "text-red-700 font-semibold" : ""
+                }`}
               >
                 {label}
                 {location.pathname === path && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-yellow-400"
+                    className="absolute left-0 -bottom-[2px] w-full h-[2px] bg-gradient-to-r from-yellow-600 via-red-600 to-yellow-600"
                   />
                 )}
               </Link>
@@ -53,6 +55,9 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
+
+      {/* Bottom decorative line */}
+      <div className="w-full h-[2px] bg-gradient-to-r from-yellow-500 via-red-700 to-yellow-500" />
     </motion.nav>
   )
 }

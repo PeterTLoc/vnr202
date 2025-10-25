@@ -1,27 +1,33 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from "react"
+import { motion } from "framer-motion"
 
 const Footer = () => {
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mt-20 border-t border-yellow-700/40 
-                 bg-gradient-to-t from-black/80 to-zinc-900/60
-                 backdrop-blur-sm shadow-[0_-2px_20px_rgba(255,215,0,0.15)]
-                 text-gray-400 text-center py-6 px-4"
+      transition={{ duration: 1 }}
+      className="border-t border-yellow-800/50 bg-[#faf6ed] text-[#3b2d1f] py-6 px-4 text-center relative"
     >
-      <p className="text-sm font-light tracking-wide">
-        © 2025 <span className="text-yellow-400 font-medium">Nhóm 8</span> — LLCT.{" "}
-        <span className="text-gray-500">All rights reserved.</span>
-      </p>
-      <p className="text-xs mt-2 text-gray-600">
-        Designed with <span className="text-yellow-500">Tailwind</span> ✦ Powered by{" "}
-        <span className="text-yellow-500">AI</span>
-      </p>
-    </motion.footer>
-  );
-};
+      {/* Decorative gradient border top */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
 
-export default Footer;
+      {/* Main text */}
+      <p className="text-sm md:text-base font-serif tracking-wide">
+        © 2025 <span className="text-red-700 font-semibold">Nhóm 8</span> — LLCT.{" "}
+        <span className="text-yellow-800 italic">Mọi quyền được bảo lưu.</span>
+      </p>
+
+      {/* Subtext */}
+      <p className="text-xs mt-2 text-yellow-900">
+        Được thiết kế với <span className="text-red-600 font-medium">Tailwind CSS</span> ✦ Hỗ trợ bởi{" "}
+        <span className="text-red-600 font-medium">AI</span>
+      </p>
+
+      {/* Bottom border for balance */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-500 via-red-700 to-yellow-500" />
+    </motion.footer>
+  )
+}
+
+export default Footer

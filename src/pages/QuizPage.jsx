@@ -4,55 +4,58 @@ import Quiz from "../components/Quiz/Quiz"
 
 const QuizPage = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden
-      bg-gradient-to-b from-[#0b0a09] via-[#111010] to-[#1a1816]
-      text-[#d9c79c] font-serif flex flex-col items-center py-10 px-6"
+    <div
+      className="relative flex flex-col items-center 
+                 w-full min-h-[calc(100vh-64px)] px-6 pt-24 pb-10 
+                 bg-[#fdfaf5] text-[#2b2119]  overflow-hidden"
     >
-      {/* Subtle mist/fog overlay */}
-      <div className="absolute inset-0 bg-[url('/fog-texture.png')] opacity-10 animate-pulse mix-blend-overlay pointer-events-none" />
+      {/* === Background Texture === */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_#fffbe6_0%,_#f7f1df_100%)]" />
+      <div className="absolute inset-0 -z-10 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
 
-      {/* Golden border frame */}
-      <div className="absolute inset-0 border border-[#a38a48]/40 rounded-lg pointer-events-none" />
+      {/* === Decorative Borders === */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
+      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
 
-      {/* Title */}
+      {/* === Title === */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="z-10 text-4xl md:text-5xl font-bold tracking-wider text-center mb-8 
-        drop-shadow-[0_0_10px_rgba(217,199,156,0.5)]"
+        transition={{ duration: 0.8 }}
+        className="text-3xl md:text-4xl font-bold text-red-700 mb-4 text-center"
       >
         Quiz Kiểm Tra Kiến Thức
       </motion.h1>
 
-      {/* Decorative golden rune divider */}
-      <motion.div
+      {/* === Subtitle === */}
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 1 }}
-        className="z-10 w-32 h-[1px] bg-gradient-to-r from-transparent via-[#c2a85e] to-transparent mb-8"
+        transition={{ delay: 0.3, duration: 1 }}
+        className="text-yellow-800 italic text-base md:text-lg text-center mb-8"
+      >
+        “Thử thách trí nhớ và khám phá kiến thức lịch sử Việt Nam hiện đại.”
+      </motion.p>
+
+      {/* === Divider === */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="mb-8 h-[1.5px] w-48 bg-gradient-to-r from-yellow-600 via-red-600 to-yellow-600"
       />
 
-      {/* Quiz container */}
+      {/* === Quiz Container === */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.7, duration: 0.6 }}
-        className="relative z-10 w-full max-w-4xl bg-[#1b1a18]/70 border border-[#a38a48]/30 
-        rounded-2xl shadow-[0_0_25px_rgba(194,168,94,0.15)] p-8 backdrop-blur-sm"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.8 }}
+        className="relative z-10 w-full max-w-4xl flex-1 flex 
+                   justify-center items-stretch overflow-hidden"
       >
         <Quiz />
-        {/* Subtle bottom glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#a38a48]/10 to-transparent rounded-b-2xl pointer-events-none" />
       </motion.div>
-
-      {/* Decorative golden bottom mist */}
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#a38a48]/10 to-transparent pointer-events-none" />
-    </motion.div>
+    </div>
   )
 }
 

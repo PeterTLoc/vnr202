@@ -26,67 +26,64 @@ const Chatbot = () => {
   }, [messages])
 
   return (
-    // ✅ full-width outer container so scrollbar reaches screen edge
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative flex flex-col h-[calc(100vh-164px)] w-full font-serif"
+      transition={{ duration: 0.5 }}
+      className="flex flex-col w-full max-w-[768px] mx-auto 
+                 h-[calc(100vh-290px)] rounded-xl overflow-hidden
+                 bg-[#fdfaf5] text-[#2b2119] "
     >
-      {/* Scrollable full-width chat area */}
+      {/* === Scrollable chat area === */}
       <div
-        className="flex-1 overflow-y-auto scrollbar-thin 
-        scrollbar-thumb-[#a38a48]/40 scrollbar-track-transparent 
-        hover:scrollbar-thumb-[#c2a85e]/60"
-        style={{
-          scrollbarGutter: "stable both-edges",
-        }}
+        className="flex-1 overflow-y-auto px-4 py-3 space-y-3 
+                   scrollbar-thin scrollbar-thumb-[#c2a85e]/40 
+                   scrollbar-track-transparent hover:scrollbar-thumb-[#c2a85e]/70"
       >
-        {/* Centered message content */}
-        <div className="w-full max-w-3xl mx-auto px-5 py-4 space-y-3">
-          <AnimatePresence>
-            {messages.map((msg, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className={`max-w-[80%] px-4 py-3 rounded-xl leading-relaxed tracking-wide ${
-                  msg.sender === "user"
-                    ? "ml-auto bg-[#3b2f15]/60 border border-[#d1b456]/40 text-[#e8d7a0] text-right shadow-[0_0_10px_rgba(194,168,94,0.1)]"
-                    : "bg-[#1b1a18]/70 border border-[#a38a48]/30 text-gray-200 shadow-[0_0_6px_rgba(194,168,94,0.05)]"
-                }`}
-              >
-                {msg.text}
-              </motion.div>
-            ))}
-          </AnimatePresence>
-          <div ref={chatEndRef} />
-        </div>
+        <AnimatePresence>
+          {messages.map((msg, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className={`max-w-[80%] px-4 py-3 rounded-xl leading-relaxed tracking-wide shadow-sm ${
+                msg.sender === "user"
+                  ? "ml-auto bg-gradient-to-br from-red-700 to-yellow-600 text-[#fffbe6]"
+                  : "bg-[#fff8e1] border border-[#e6d3a3] text-[#2b2119]"
+              }`}
+            >
+              {msg.text}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+        <div ref={chatEndRef} />
       </div>
 
-      {/* Input bar (also centered, inside same width constraint) */}
-      <div className="p-3 border-t border-[#2a281f]/50">
-        <div className="w-full max-w-3xl mx-auto flex items-center gap-2">
+      {/* === Input bar === */}
+      <div className="p-3 border-t border-yellow-900/20 bg-[#fffaf0]">
+        <div className="flex items-center gap-2">
           <input
             type="text"
             placeholder="Nhập câu hỏi..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-            className="flex-1 bg-[#1a1816]/80 border border-[#a38a48]/30 text-[#e8d7a0] 
-            px-4 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#c2a85e] placeholder-gray-500"
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+            className="flex-1 px-4 py-2 border border-yellow-900/30 rounded-md 
+                       bg-[#fffbe6] text-[#2b2119] placeholder-[#a38a48]
+                       focus:outline-none focus:ring-1 focus:ring-yellow-700"
           />
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 12px rgba(194,168,94,0.3)",
             }}
             onClick={sendMessage}
-            className="bg-gradient-to-br from-[#a38a48] to-[#c2a85e] text-black 
-            font-semibold px-4 py-2 rounded-lg transition-transform duration-200"
+            className="px-4 py-2 font-semibold rounded-md
+                       bg-gradient-to-br from-yellow-600 via-red-700 to-yellow-600
+                       text-[#fffbe6] transition-transform duration-200"
           >
             Gửi
           </motion.button>

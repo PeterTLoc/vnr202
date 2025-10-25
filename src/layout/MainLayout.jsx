@@ -6,16 +6,23 @@ import Footer from "../components/Footer"
 const MainLayout = () => {
   const { pathname } = useLocation()
   const isChatbot = pathname === "/chatbot"
+  const isQuiz = pathname === "/quiz"
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-gray-100">
+    <div className="min-h-screen flex flex-col bg-[#fdf8ee] text-[#2b2119] font-sans relative">
+      {/* Optional subtle paper texture */}
+      <div className="absolute inset-0 -z-10 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
+
+      {/* Navbar (fixed height = 4rem / h-16) */}
       <Navbar />
 
-      <main className="pt-16"> {/* Adjusted padding-top to match approximate navbar height (py-3 + content ~4rem/64px, but pt-16=4rem for safety) */}
+      {/* Main content area */}
+      <main className="flex-grow">
         <Outlet />
       </main>
 
-      {!isChatbot && <Footer />}
+      {/* Footer */}
+      {!isChatbot && !isQuiz && <Footer />}
     </div>
   )
 }
