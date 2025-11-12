@@ -1,31 +1,43 @@
 import React from "react"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
     <motion.footer
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="border-t border-yellow-800/50 bg-[#faf6ed] text-[#3b2d1f] py-6 px-4 text-center relative"
+      transition={{ duration: 0.5 }}
+      className="bg-[#fdf8ee] border-t border-yellow-300/40 text-[#3b2d1f] shadow-inner"
+      role="contentinfo"
     >
-      {/* Decorative gradient border top */}
-      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
+      <div
+        aria-hidden
+        className="w-full h-[2px] bg-gradient-to-r from-yellow-600 via-red-600 to-yellow-600 opacity-70"
+      />
 
-      {/* Main text */}
-      <p className="text-sm md:text-base font-serif tracking-wide">
-        © 2025 <span className="text-red-700 font-semibold">Nhóm 8</span> — LLCT.{" "}
-        <span className="text-yellow-800 italic">Mọi quyền được bảo lưu.</span>
-      </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="text-sm font-serif text-[#3b2d1f]/90">
+          © {new Date().getFullYear()}{" "}
+          <span className="font-semibold text-red-700">Nhóm 8</span> —{" "}
+          <span className="italic text-yellow-700">
+            Đổi mới & hội nhập quốc tế
+          </span>
+        </div>
 
-      {/* Subtext */}
-      <p className="text-xs mt-2 text-yellow-900">
-        Được thiết kế với <span className="text-red-600 font-medium">Tailwind CSS</span> ✦ Hỗ trợ bởi{" "}
-        <span className="text-red-600 font-medium">AI</span>
-      </p>
-
-      {/* Bottom border for balance */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-500 via-red-700 to-yellow-500" />
+        <div className="flex items-center gap-4 text-xs text-[#3b2d1f]/80">
+          <Link to="/privacy" className="hover:underline hover:text-red-700">
+            Chính sách
+          </Link>
+          <Link to="/contact" className="hover:underline hover:text-red-700">
+            Liên hệ
+          </Link>
+          <span className="hidden sm:inline">•</span>
+          <div className="text-[11px] text-yellow-800">
+            Thiết kế đồng nhất ✦ Nhóm 8
+          </div>
+        </div>
+      </div>
     </motion.footer>
   )
 }

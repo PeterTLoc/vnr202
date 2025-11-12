@@ -79,9 +79,7 @@ const Chatbot = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col w-full max-w-[768px] mx-auto 
-                 h-[calc(100vh-290px)] rounded-xl overflow-hidden
-                 bg-[#fdfaf5] text-[#2b2119]"
+      className="flex flex-col w-full max-w-[768px] mx-auto h-[calc(100vh-230px)] rounded-xl overflow-hidden bg-[#fdfaf5] text-[#2b2119]"
     >
       {/* === Chat messages === */}
       <div

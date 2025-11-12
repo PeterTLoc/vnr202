@@ -1,28 +1,28 @@
 import React from "react"
 import { Outlet, useLocation } from "react-router-dom"
-import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const MainLayout = () => {
   const { pathname } = useLocation()
-  const isChatbot = pathname === "/chatbot"
-  const isQuiz = pathname === "/quiz"
+  const hideFooter = pathname === "/chatbot" || pathname === "/quiz"
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fdf8ee] text-[#2b2119] font-sans relative">
-      {/* Optional subtle paper texture */}
-      <div className="absolute inset-0 -z-10 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
+      {/* Light paper texture background */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"
+      />
 
-      {/* Navbar (fixed height = 4rem / h-16) */}
-      <Navbar />
+      <Header />
 
-      {/* Main content area */}
+      {/* Add top padding equal to header height */}
       <main className="flex-grow">
-        <Outlet />
+        <Outlet className="flex-grow"/>
       </main>
 
-      {/* Footer */}
-      {!isChatbot && !isQuiz && <Footer />}
+      {!hideFooter && <Footer />}
     </div>
   )
 }

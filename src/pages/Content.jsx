@@ -83,17 +83,27 @@ const Content = () => {
   }
 
   return (
-    <div className="relative flex flex-col items-center min-h-screen py-20 px-6 md:px-12 text-[#2b2119] bg-[#f9f4e6] lg:pl-[17rem]">
+    <main
+      className="relative flex flex-col items-center min-h-screen 
+                 pt-20 pb-12 px-6 md:px-12 text-[#2b2119] 
+                 bg-[#f9f4e6] lg:pl-[17rem] overflow-hidden"
+    >
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_#fffbe6_0%,_#f7f1df_100%)]" />
-      <div className="absolute inset-0 -z-10 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_#fffbe6_0%,_#f7f1df_100%)] opacity-90"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 opacity-7 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"
+      />
 
-      {/* Decorative Borders */}
-      <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
+      {/* === Gradient Borders === */}
+      <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-red-700 via-yellow-500 to-red-700" />
 
-      {/* Floating TOC */}
-      <aside className="hidden lg:block fixed left-8 top-28 z-40">
+      {/* === Floating TOC === */}
+      <aside className="hidden lg:block fixed left-8 top-24 z-40">
         <nav className="w-56 bg-white/95 backdrop-blur-sm border border-yellow-900/10 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
           <h4 className="text-sm font-semibold text-red-700 mb-3 uppercase tracking-wide">
             Mục lục
@@ -386,7 +396,7 @@ const Content = () => {
 
         {/* end content. No footer here per your layout component */}
       </div>
-    </div>
+    </main>
   )
 }
 
