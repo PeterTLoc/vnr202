@@ -7,7 +7,7 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(false)
   const chatEndRef = useRef(null)
 
-  const API_BASE = import.meta.env.VITE_API_BASE || "http://47.128.217.142:8090"
+  const API_BASE = import.meta.env.VITE_API_BASE || "/api"
 
   const sendMessage = async () => {
     const trimmed = input.trim()
@@ -20,7 +20,7 @@ const Chatbot = () => {
 
     try {
       // Build URL from env or fallback
-      const url = `${API_BASE.replace(/\/$/, "")}/vnr`
+      const url = `${API_BASE.replace(/\/$/, "")}/vnr`;
 
       // Prevent mixed-content: if site is HTTPS and API is HTTP, bail early with a helpful message
       if (typeof window !== "undefined" && window.location.protocol === "https:" && url.startsWith("http:")) {
