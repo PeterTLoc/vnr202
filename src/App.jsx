@@ -4,7 +4,6 @@ import Content from "./pages/Content"
 import QuizPage from "./pages/QuizPage"
 import ChatbotPage from "./pages/ChatbotPage"
 import AIUsage from "./pages/AIUsage"
-import "./styles/App.css"
 import MainLayout from "./layout/MainLayout"
 
 function App() {
