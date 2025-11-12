@@ -7,6 +7,8 @@ const Chatbot = () => {
   const [loading, setLoading] = useState(false)
   const chatEndRef = useRef(null)
 
+  const API_BASE = import.meta.env.VITE_API_BASE || "http://47.128.217.142:8090"
+
   const sendMessage = async () => {
     const trimmed = input.trim()
     if (!trimmed) return
@@ -17,14 +19,37 @@ const Chatbot = () => {
     setLoading(true)
 
     try {
+      // Build URL from env or fallback
+      const url = `${API_BASE.replace(/\/$/, "")}/vnr`
+
+      // Prevent mixed-content: if site is HTTPS and API is HTTP, bail early with a helpful message
+      if (typeof window !== "undefined" && window.location.protocol === "https:" && url.startsWith("http:")) {
+        console.warn("Blocked mixed-content request to", url)
+        setMessages((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text:
+              "Không thể kết nối tới API vì trang đang chạy trên HTTPS nhưng API sử dụng HTTP. Hãy cấu hình API để dùng HTTPS hoặc cấu hình proxy trên hosting.",
+          },
+        ])
+        setLoading(false)
+        return
+      }
+
       // Send message to API
-      const response = await fetch("http://47.128.217.142:8090/vnr", {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ question: trimmed }),
       })
+
+      if (!response.ok) {
+        const text = await response.text().catch(() => "(no body)")
+        throw new Error(`API error ${response.status}: ${text}`)
+      }
 
       const data = await response.json()
 
