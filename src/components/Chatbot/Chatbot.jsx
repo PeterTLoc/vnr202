@@ -20,17 +20,20 @@ const Chatbot = () => {
 
     try {
       // Build URL from env or fallback
-      const url = `${API_BASE.replace(/\/$/, "")}/vnr`;
+      const url = `${API_BASE.replace(/\/$/, "")}/vnr`
 
       // Prevent mixed-content: if site is HTTPS and API is HTTP, bail early with a helpful message
-      if (typeof window !== "undefined" && window.location.protocol === "https:" && url.startsWith("http:")) {
+      if (
+        typeof window !== "undefined" &&
+        window.location.protocol === "https:" &&
+        url.startsWith("http:")
+      ) {
         console.warn("Blocked mixed-content request to", url)
         setMessages((prev) => [
           ...prev,
           {
             sender: "bot",
-            text:
-              "Không thể kết nối tới API vì trang đang chạy trên HTTPS nhưng API sử dụng HTTP. Hãy cấu hình API để dùng HTTPS hoặc cấu hình proxy trên hosting.",
+            text: "Không thể kết nối tới API vì trang đang chạy trên HTTPS nhưng API sử dụng HTTP. Hãy cấu hình API để dùng HTTPS hoặc cấu hình proxy trên hosting.",
           },
         ])
         setLoading(false)
