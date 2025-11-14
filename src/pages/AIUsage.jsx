@@ -7,7 +7,7 @@ const AIUsage = () => {
     {
       icon: PenTool,
       title: "Công cụ",
-      text: "ChatGPT — hỗ trợ xây dựng ý tưởng, viết mã, gợi ý cấu trúc và diễn đạt.",
+      text: "Chatbot AI hỗ trợ tìm kiếm thông tin, gợi ý cấu trúc, và giúp phân tích, tổng hợp tài liệu.",
     },
     {
       icon: BookOpen,
