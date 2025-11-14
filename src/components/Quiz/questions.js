@@ -1,107 +1,122 @@
 export const questions = [
   {
-    question: "Công cuộc Đổi Mới được khởi xướng vào năm nào?",
+    question: "Đại hội XII của Đảng (2016) diễn ra tại đâu?",
     answers: [
-      { text: "1975", correct: false },
-      { text: "1980", correct: false },
-      { text: "1986", correct: true },
-      { text: "1991", correct: false },
+      { text: "TP. Hồ Chí Minh", correct: false },
+      { text: "Đà Nẵng", correct: false },
+      { text: "Hà Nội", correct: true },
+      { text: "Hải Phòng", correct: false },
     ],
   },
   {
     question:
-      "Việt Nam gia nhập Tổ chức Thương mại Thế giới (WTO) vào năm nào?",
+      "Chủ đề của Đại hội XII (2016) nhấn mạnh mục tiêu phấn đấu sớm đưa nước ta trở thành nước như thế nào?",
     answers: [
-      { text: "1995", correct: false },
-      { text: "2001", correct: false },
-      { text: "2007", correct: true },
-      { text: "2010", correct: false },
+      { text: "Nước phát triển, thu nhập cao", correct: false },
+      { text: "Nước công nghiệp theo hướng hiện đại", correct: true },
+      { text: "Nước có nền kinh tế tri thức hàng đầu", correct: false },
+      { text: "Nước nông nghiệp công nghệ cao", correct: false },
     ],
   },
   {
-    question:
-      "Đại hội VIII (1996) của Đảng xác định nhiệm vụ trọng tâm của thời kỳ mới là gì?",
-    answers: [
-      { text: "Đổi mới toàn diện đất nước", correct: false },
-      {
-        text: "Đẩy mạnh công nghiệp hóa, hiện đại hóa đất nước",
-        correct: true,
-      },
-      { text: "Cải cách bộ máy nhà nước", correct: false },
-      { text: "Mở rộng quan hệ ngoại giao", correct: false },
-    ],
-  },
-  {
-    question:
-      "Đại hội IX (2001) của Đảng đề ra Chiến lược phát triển kinh tế - xã hội đến năm nào?",
-    answers: [
-      { text: "2010", correct: true },
-      { text: "2015", correct: false },
-      { text: "2020", correct: false },
-      { text: "2025", correct: false },
-    ],
-  },
-  {
-    question:
-      "Năm 1995, Việt Nam trở thành thành viên của tổ chức khu vực nào?",
-    answers: [
-      { text: "APEC", correct: false },
-      { text: "ASEAN", correct: true },
-      { text: "EU", correct: false },
-      { text: "NAFTA", correct: false },
-    ],
-  },
-  {
-    question: "Đại hội X (2006) nhấn mạnh nhiệm vụ trọng tâm nào?",
+    question: "Một trong sáu nhiệm vụ trọng tâm của Đại hội XII (2016) là gì?",
     answers: [
       {
-        text: "Hoàn thiện thể chế kinh tế thị trường định hướng xã hội chủ nghĩa",
+        text: "Tăng cường xây dựng, chỉnh đốn Đảng; ngăn chặn, đẩy lùi suy thoái",
         correct: true,
       },
-      { text: "Phát triển nông thôn mới", correct: false },
-      { text: "Đẩy mạnh cải cách hành chính", correct: false },
-      { text: "Xây dựng quốc phòng toàn dân", correct: false },
-    ],
-  },
-  {
-    question: "Đường lối công nghiệp hóa, hiện đại hóa gắn liền với điều gì?",
-    answers: [
-      { text: "Phát triển kinh tế tri thức", correct: true },
-      { text: "Tăng cường khai thác tài nguyên thiên nhiên", correct: false },
-      { text: "Phát triển nông nghiệp đơn thuần", correct: false },
-      { text: "Tăng dân số lao động", correct: false },
+      { text: "Đẩy mạnh chuyển đổi số quốc gia", correct: false },
+      {
+        text: "Khơi dậy khát vọng phát triển đất nước phồn vinh",
+        correct: false,
+      },
+      { text: "Phát triển kinh tế tập thể", correct: false },
     ],
   },
   {
     question:
-      "Mục tiêu đến năm 2020, Việt Nam cơ bản trở thành nước như thế nào?",
+      "Nghị quyết 04-NQ/TW của Trung ương 4 (Khóa XII) tập trung vào nội dung trọng tâm nào?",
     answers: [
-      { text: "Công nghiệp theo hướng hiện đại", correct: true },
-      { text: "Nông nghiệp truyền thống", correct: false },
-      { text: "Dịch vụ du lịch là chủ đạo", correct: false },
-      { text: "Phụ thuộc vào viện trợ nước ngoài", correct: false },
+      { text: "Phát triển kinh tế tư nhân", correct: false },
+      { text: "Cải cách tiền lương và bảo hiểm xã hội", correct: false },
+      {
+        text: "Ngăn chặn “tự diễn biến”, “tự chuyển hóa” trong nội bộ",
+        correct: true,
+      },
+      { text: "Hoàn thiện thể chế kinh tế thị trường", correct: false },
     ],
   },
   {
-    question: "Thành tựu nổi bật của công cuộc đổi mới là gì?",
+    question:
+      "Hội nghị Trung ương 5 (Khóa XII) ban hành Nghị quyết 10-NQ/TW nhằm mục tiêu gì?",
     answers: [
       {
-        text: "Đời sống nhân dân ngày càng được cải thiện, kinh tế tăng trưởng ổn định",
+        text: "Phát triển kinh tế tư nhân trở thành một động lực quan trọng",
         correct: true,
       },
-      { text: "Tăng trưởng dân số nhanh", correct: false },
-      { text: "Phụ thuộc hoàn toàn vào đầu tư nước ngoài", correct: false },
-      { text: "Giảm sút kinh tế nặng nề", correct: false },
+      { text: "Cơ cấu lại doanh nghiệp nhà nước", correct: false },
+      { text: "Chăm sóc sức khỏe nhân dân", correct: false },
+      { text: "Xây dựng, chỉnh đốn Đảng", correct: false },
+    ],
+  },
+  {
+    question: "Đại hội XIII của Đảng (2021) diễn ra vào thời gian nào?",
+    answers: [
+      { text: "Từ 20 – 28/1/2016", correct: false },
+      { text: "Từ 25/1 đến 1/2/2021", correct: true },
+      { text: "Tháng 6/2017", correct: false },
+      { text: "Tháng 5/2018", correct: false },
     ],
   },
   {
     question:
-      "Một trong những thách thức lớn trong quá trình hội nhập quốc tế là gì?",
+      "Đại hội XIII đặt mục tiêu đến năm 2030 (kỷ niệm 100 năm thành lập Đảng) nước ta trở thành nước như thế nào?",
     answers: [
-      { text: "Cạnh tranh gay gắt trên thị trường quốc tế", correct: true },
-      { text: "Giảm dân số lao động", correct: false },
-      { text: "Khí hậu ôn hòa", correct: false },
-      { text: "Tài nguyên dồi dào", correct: false },
+      { text: "Nước phát triển, thu nhập cao", correct: false },
+      {
+        text: "Nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao",
+        correct: true,
+      },
+      {
+        text: "Nước đang phát triển có công nghiệp theo hướng hiện đại, vượt qua mức thu nhập trung bình thấp",
+        correct: false,
+      },
+      { text: "Nước công nghiệp hàng đầu châu Á", correct: false },
+    ],
+  },
+  {
+    question:
+      "Theo mục tiêu của Đại hội XIII, Việt Nam phấn đấu trở thành nước phát triển, thu nhập cao vào năm nào?",
+    answers: [
+      { text: "2030", correct: false },
+      { text: "2035", correct: false },
+      { text: "2040", correct: false },
+      { text: "2045", correct: true },
+    ],
+  },
+  {
+    question: "Quan điểm chỉ đạo nào được Đại hội XIII (2021) nhấn mạnh?",
+    answers: [
+      {
+        text: "Bảo đảm lợi ích quốc gia – dân tộc là mục tiêu tối thượng",
+        correct: true,
+      },
+      { text: "Ưu tiên phát triển công nghiệp nặng", correct: false },
+      { text: "Chỉ tập trung vào hội nhập kinh tế", correct: false },
+      { text: "Lấy kinh tế nhà nước làm chủ đạo duy nhất", correct: false },
+    ],
+  },
+  {
+    question:
+      "Một trong sáu nhiệm vụ trọng tâm của Đại hội XIII là gì, đặc biệt trong bối cảnh mới?",
+    answers: [
+      { text: "Cải cách toàn diện hệ thống giáo dục", correct: false },
+      {
+        text: "Phục hồi, phát triển KTXH hậu Covid-19, đẩy mạnh chuyển đổi số quốc gia",
+        correct: true,
+      },
+      { text: "Tập trung khai thác tài nguyên thiên nhiên", correct: false },
+      { text: "Chỉ phát triển kinh tế tư nhân", correct: false },
     ],
   },
 ]
